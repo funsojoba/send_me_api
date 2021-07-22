@@ -7,7 +7,7 @@ from api.models.user import User
 class Ledger(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    amount = models.IntegerField()
+    amount = models.IntegerField(default=0)
     ledger_type = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

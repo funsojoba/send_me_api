@@ -1,5 +1,5 @@
 from rest_framework import serializers
 
 
-class SendMoneySerializer(serializers.Serializer):
+class AmountSerializer(serializers.Serializer):
     amount = serializers.IntegerField()
