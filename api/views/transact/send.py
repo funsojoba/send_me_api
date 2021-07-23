@@ -22,7 +22,7 @@ class SendMoneyView(APIView):
         db_amount = user.account_balance
         request_amount = data.get('amount')
 
-        if db_amount < request_amount:
+        if int(db_amount) < int(request_amount):
             return Response({"error":"insufficient amount"})
         
         total_amount = db_amount - request_amount
